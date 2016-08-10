@@ -1,0 +1,18 @@
+main {
+  /*padding: 1em;*/
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  /*margin-top: 10px;*/
+  display: block;
+}
+
+#main-content{
+  margin: 15px;
+}
+.side-nav-wrapper{
+    width: 250px;
+    background-image: url("../../../public/img/background.jpg");
+    background-color: #5E7FAC;
+    background-position: 55% 0%;
+    background-repeat: no-repeat;
+}

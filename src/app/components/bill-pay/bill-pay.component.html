@@ -1,0 +1,27 @@
+<olb-card [title]="title" class="olb-bill-pay he3">
+    <olb-card-front>
+
+        <div class="card-status" *ngIf="!dataLoaded">
+            <h2 [innerText]="status"></h2>
+        </div>
+
+        <div *ngIf="dataLoaded">
+            <bp-popular-billers *ngIf="currentView === cardView.PopularBillers"
+            [showCancelButton]="showCancelButton"
+            (changeView)="changeView($event)"></bp-popular-billers>
+
+            <bp-add-biller *ngIf="currentView === cardView.AddBiller"
+                [biller]="sharedData"
+                (newBillerAdded)="newBillerAdded($event)"
+                (changeView)="changeView($event)"></bp-add-biller>
+
+            <bp-biller-list *ngIf="currentView === cardView.BillerList"
+                [payees]="payees"
+                (changeSharedData)="changeSharedData($event)"
+                (changeView)="changeView($event)"></bp-biller-list>
+
+            <bp-payment *ngIf="currentView === cardView.Payment"
+                (changeView)="changeView($event)"></bp-payment>
+        </div>
+    </olb-card-front>
+</olb-card>

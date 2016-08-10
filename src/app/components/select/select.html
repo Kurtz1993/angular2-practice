@@ -1,0 +1,12 @@
+<div class="dropdown" [class.open]="active">
+    View: 
+    <button (click)="show()" 
+    class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{label}}
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+        <i class="material-icons">expand_more</i>
+    </button>
+    <ul class="dropdown-menu">
+        <li *ngFor="let option of options" (click)="select(option)"><a>{{option.title}}</a></li>
+    </ul>
+</div>

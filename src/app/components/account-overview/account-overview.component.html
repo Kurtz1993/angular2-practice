@@ -1,0 +1,40 @@
+<olb-card [title]="title" class="he4 olb-account-overview" [hasFooter]="hasData">
+    <olb-card-front>
+        <ul class="account-type-selector">
+            <li class="account-type"
+                (click)="filterAccounts('available')"
+                [ngClass]="{'active': activeTab === 'available'}">Available</li>
+            <li class="account-type"
+                (click)="filterAccounts('assets')"
+                [ngClass]="{'active': activeTab === 'assets'}">Assets</li>
+            <li class="account-type"
+                (click)="filterAccounts('debt')"
+                [ngClass]="{'active': activeTab === 'debt'}">Debt</li>
+        </ul>
+
+        <div class="card-status" *ngIf="!dataLoaded">
+            <h2 [innerText]="status"></h2>
+        </div>
+
+        <div class="chart-container">
+            <div *ngIf="dataLoaded">
+                <h2 class="total-funds" [innerText]="total | currency:'USD':true:'1.2-2'"></h2>
+                <span [innerText]="totalText"></span>
+            </div>
+            <canvas id="accountOverviewChart" height="225"></canvas>
+
+            <div class="account-labels" *ngIf="dataLoaded">
+                <div class="account-label" *ngFor="let account of accountLabels">
+                    <div class="account-bullet" [style.backgroundColor]="account?.color"></div>
+                    <span [innerText]="account?.name"></span>
+                </div>
+            </div>
+        </div>
+    </olb-card-front>
+    <olb-card-footer *ngIf="dataLoaded">
+        <div class="account-info" [style.backgroundColor]="selectedAccount?.color">
+            <h5 class="name">{{ selectedAccount?.name }} {{ totalText }}</h5>
+            <h1 class="funds" [innerText]="selectedAccount?.amount | currency:'USD':true:'1.2-2'"></h1>
+        </div>
+    </olb-card-footer>
+</olb-card>

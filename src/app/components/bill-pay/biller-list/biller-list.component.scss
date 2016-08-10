@@ -1,0 +1,67 @@
+@import '../../../styles/common';
+
+:host {
+    .table {
+        display: block;
+        table-layout: fixed;
+        border-collapse: collapse;
+        font-size: 1.2em;
+        width: 100%;
+        border-spacing: 0;
+
+        >thead {
+            flex: 0 0 auto;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+
+            >tr {
+                >th {
+                    font-weight: normal;
+                    font-size: 0.9em;
+                    border: 0;
+                    padding: 8px 10px;
+                    line-height: 1.42857;
+                    vertical-align: top;
+                }
+            }
+        }
+
+        >tbody {
+            display: block;
+            flex: 1 1 auto;
+            overflow-y: auto;
+            height: 300px;
+
+            >tr {
+                width: 100%;
+                display: table;
+                table-layout: fixed;
+                margin-top: 4px;
+
+                >td {
+                    margin-top: 6px;
+                    background-color: #F3F8FC;
+                    padding: 10px 8px;
+                    line-height: 1.42587;
+
+                    &:last-child {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .add-biller {
+        text-align: center;
+        margin-top: 10px;
+
+        >a {
+            font-size: 14px;
+            color: $navy;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<md-toolbar>
+    <!--<button  md-icon-button (click)="toggleLeftNav()"><i class="material-icons">menu</i></button>-->
+
+    <div class="tb-search-form">
+        <i class="material-icons">search</i>
+        <div class="tb-form-group">
+            <input type="text" placeholder="I WANT TO..." class="tb-form-input">
+        </div>
+    </div>
+    <span class="fill-remaining-space"></span>
+    
+        <div class="tb-element">
+            <a>
+                <i class="material-icons">shop</i> <span>APP STORE</span>
+            </a>
+        </div>
+        <div class="tb-element tb-d-options" (mouseenter)="dOptions.toggle()" (mouseleave)="dOptions.toggle()">
+            <a>
+                <i class="material-icons">settings</i> <span>DASHBOARD OPTIONS</span>
+            </a>
+            <dashboard-options #dOptions></dashboard-options>
+        </div>
+        <div class="tb-element">
+            <a class="btn btn-outline btn-success">
+                LOGOUT
+            </a>
+        </div>
+    
+</md-toolbar>

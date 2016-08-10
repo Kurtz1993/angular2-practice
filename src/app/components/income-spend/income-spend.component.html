@@ -1,0 +1,49 @@
+<olb-card [title]="title" [hasFooter]="false" class="he2">
+
+    <olb-card-front>
+        <div class=" bofi-card-income-spending">
+            <ul class="monthly-view-selector" >
+                <li [id]="'view' + currentYear" class="monthly-view current-year active" (click)="populateChart(currentYear);">Monthly {{currentYear}}</li>
+                <li [id]="'view' + lastYear" class="monthly-view" (click)="populateChart(lastYear);">Monthly {{lastYear}}</li>
+            </ul>
+
+            <div class="">
+                <div class="graph-container">
+
+                    <div *ngIf="!dataLoaded"
+                        [innerText]="status">
+                    </div>
+
+                    <canvas class="chart"></canvas>
+                </div>
+                <div class="transactionDetail">
+                    <div class=" currentMonth">
+                        {{detailTransactions.currentStateMonth }} {{selectedYear}}
+                        <hr>
+                    </div>
+                    <div class=" monthIncome">
+                        <span>
+                            <i class="fa fa-circle text-primary avgIcon"></i>
+                            Monthly Income
+                        </span>
+                        <p class="avgIncome text-primary"
+                        [innerText]="detailTransactions.avgIncome | currency:'USD':true:'1.2-2'">
+                        </p>
+                    </div>
+
+                    <div class=" monthSpent">
+                        <span>
+                            <i class="fa fa-circle text-secondary avgIcon"></i>
+                            Monthly Spent
+                        </span>
+                        <p class="avgSpent text-secondary">
+                            <span [innerText]="detailTransactions.avgSpent |  currency:'USD':true:'1.2-2'">
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </olb-card-front>
+</olb-card>

@@ -1,0 +1,95 @@
+.dropdown {
+    float: left;
+    font-size: 1.2em;
+    color: #5771AA;
+    margin: 4px 0px;
+}
+
+.dropdown, .dropup {
+    position: relative;
+}
+
+.dropdown button {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #5771AA;
+    font-weight: normal;
+    background-color: transparent;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 2px 0;
+    margin-left: 10px;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.dropdown button i { 
+    float: right;
+}
+
+.dropdown-menu > li > a {
+    border-radius: 3px;
+    color: inherit;
+    line-height: 25px;
+    margin: 4px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.open > .dropdown-menu li > a:hover {
+    color: #5771AA;
+    background-color: #FFF;
+}
+
+ .open > .dropdown-menu {
+    animation: transparent 1s;
+    border-radius: 0;
+    top: 0;
+    left: 45px;
+    font-size: 1em;
+    min-width: 0px;
+    display: block; /* Change this once open class toggles */
+}
+
+.dropdown-menu {
+    border: medium none;
+    border-radius: 3px;
+    background-color: #FFF;
+    box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+    display: none;
+    float: left;
+    font-size: 12px;
+    left: 0;
+    list-style: none outside none;
+    padding: 0;
+    position: absolute;
+    text-shadow: none;
+    top: 100%;
+    z-index: 1000;
+}
+
+.open > .dropdown-menu li > a {
+    color: #000;
+}
+.dropdown-menu > li > a {
+    border-radius: 3px;
+    color: inherit;
+    line-height: 25px;
+    margin: 4px;
+    text-align: left;
+    font-weight: normal;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+a {
+    cursor: pointer;
+}

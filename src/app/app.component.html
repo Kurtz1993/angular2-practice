@@ -1,0 +1,13 @@
+<main>
+    <md-sidenav-layout [style.min-height.px]="1333">
+        <md-sidenav opened="true" mode="side" #leftnav class="side-nav-wrapper">
+            <side-nav></side-nav>
+        </md-sidenav>
+
+        <top-bar></top-bar>
+
+        <div id="main-content">
+            <router-outlet></router-outlet>
+        </div>
+	</md-sidenav-layout>
+</main>

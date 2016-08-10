@@ -1,0 +1,118 @@
+@import '../../styles/common';
+
+.olb-account-overview {
+  .account-type-selector {
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    >.account-type {
+      display: inline-block;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 10px 0;
+      padding: 5px 10px;
+      min-width: 80px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+
+      &.active {
+        color: $light-blue;
+        border: 2px solid $light-blue;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover:not(.active) {
+        color: $inactive-color;
+      }
+    }
+  }
+
+  .card-status {
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    margin-top: 195px;
+  }
+
+  .chart-container {
+    >span {
+      padding-bottom: 10px;
+    }
+
+    >canvas {
+      position: relative;
+      left: calc(50% - 150px);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .total-funds {
+      color: $light-blue;
+      margin: 0;
+      font-size: 38px;
+    }
+
+    >.account-labels {
+      padding: 5px;
+      width: 100%;
+      margin-top: 15px;
+      max-height: 110px;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      >.account-label {
+        float: left;
+        width: 50%;
+        margin-bottom: 5px;
+
+        >.account-bullet {
+          width: 15px;
+          height: 15px;
+          -webkit-border-radius: 100%;
+          border-radius: 100%;
+          display: inline-block;
+          float: left;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .account-info {
+    color: #FFF;
+    margin-top: 0;
+    text-align: center;
+    height: 100%;
+    -webkit-border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 6px 6px;
+    >.name {
+      margin: 0 0 5px 0;
+      padding-top: 10px;
+      font-size: 16px;
+    }
+
+    >.funds {
+      font-size: 38px;
+      margin: 0;
+    }
+  }
+}

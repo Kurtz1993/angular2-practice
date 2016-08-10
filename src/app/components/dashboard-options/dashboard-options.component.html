@@ -1,0 +1,24 @@
+<div class="menu-wrapper" [hidden]="!isShown">
+    <div class="section-views">
+        <h4 class="sec-title">VIEWS</h4>
+        <!--<input type ="text" [(ngModel)]="activeView.name"/>-->
+        <md-radio-group name="viewOptions" >
+            <md-radio-button [value]="view" (change)="setActiveView(view)" name="viewOptions" *ngFor="let view of views" class="sec-view-item" [checked]="activeView.name == view.name">
+                {{view.name}}
+                <a *ngIf="activeView.name == view.name"> (Reset Layout) </a>
+            </md-radio-button>
+        </md-radio-group>
+    </div>
+    <hr>
+    <div class="section-display">
+        <h4 class="sec-title">DISPLAY</h4>
+        <ul>
+            <!-- TODO: Here load the apps bought from the App Store-->
+            <!--<li>                
+                <md-checkbox [checked]="app.isActive" (change)="app.isActive = $event">
+                    {{app.name}}
+                </md-checkbox>
+            </li>-->
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="olb-card" [ngClass]="{'has-footer': hasFooter}">
+    <div class="header">
+        <span class="pull-left">
+            <h4 class="olb-card-title" [innerText]="title"></h4>
+        </span>
+        <span class="pull-right" *ngIf="canFlip">
+            <!-- TODO: Put the settings icon here -->
+            <i class="fa">O</i>
+        </span>
+    </div>
+    <div class="olb-card-content">
+        <div class="olb-card-front">
+            <ng-content select="olb-card-front"></ng-content>
+        </div>
+        <div class="olb-card-back">
+            <ng-content select="olb-card-back"></ng-content>
+        </div>
+    </div>
+    <div class="olb-card-footer">
+        <ng-content select="olb-card-footer"></ng-content>
+    </div>
+</div>

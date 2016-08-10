@@ -1,0 +1,15 @@
+.menu-item{
+    cursor: pointer;
+    width:100%;
+
+    .menu-item-name{
+        color: inherit;
+        .menu-name{
+            vertical-align: middle;
+            
+        }
+        .material-icons{
+            vertical-align: middle;
+        }
+    }
+}

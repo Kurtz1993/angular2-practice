@@ -1,0 +1,41 @@
+@import '../../styles/common';
+
+.menu-wrapper{
+    position: absolute;
+    background: #fff;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: -20px;
+    padding: 10px;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 6px;
+    transition: all .5s;
+
+    .sec-title{
+        color: #000;
+        text-align: left;
+        font-weight: 700;
+        font-size: .95em;
+    }
+    .section-views{
+        .sec-view-item{
+            display: block;
+            color: #ccc;
+            text-align:left;
+            margin: 5px;
+            &.md-radio-checked{
+                color: $success;
+            }
+        }
+    }
+}
+
+
+// Override md-radio styles
+.md-radio-checked .md-radio-outer-circle{
+    border-color: $success !important;
+}
+
+.md-radio-inner-circle{
+    background-color: $success !important;
+}

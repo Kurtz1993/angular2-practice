@@ -1,0 +1,56 @@
+<nav class="nav-sidebar" role="navigation">
+    <div class="nav-logo">
+        <img class="logo" src="../../assets/img/logo-white.png" />
+    </div>
+    <div class="nav-profile">
+        <div class="profile">
+            <img class="nav-img-circle" src="../../assets/img/a1.jpg" />
+        </div>
+        <div>
+            <span class="text-profile">Hello, Jack</span>
+        </div>
+            <div>
+            <a routerLink="/edit-profile" >
+                <span class="text-profile-job">Edit profile</span>
+            </a>
+        </div>
+    </div>
+    <ul class="nav">
+        <li routerLinkActive="active">
+            <a routerLink="/dashboard" >
+                <menu-item name="Dashboard" href="" icon="dashboard">
+                    <!-- here if the item has nested items -->
+                </menu-item>
+            </a>
+        </li>
+        <li [class.active]="!menuItem.collapsed">
+            <menu-item name="Accounts" icon="credit_card" [collapsible]="true" [collapsed]="false" #menuItem>
+                <span class="nav-aacc-loader" *ngIf="!accountsLoaded">Loading...</span>
+                <ul class="nav-second-level">
+                    <li *ngFor="let acc of accounts">
+                        <a [routerLink]="['/account', acc.id]">
+                            <menu-item [name]="acc.nickname" class="nav-acc-name"></menu-item> 
+                            <span class="nav-acc-amount pull-right">{{acc.amount > 0 ? (acc.amount | currency:'USD':true:'1.2-2') : 'Closed'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </menu-item>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/my-bills" >
+                <menu-item name="My Bills" icon="attach_money"></menu-item>
+            </a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/alerts" >
+                <menu-item name="Alerts" icon="warning"></menu-item>
+            </a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/enroll-bill-pay" >
+                <menu-item name="Enroll in Bill Pay" icon="label_outline"></menu-item>
+            </a>
+        </li>
+    </ul>
+</nav>
+   

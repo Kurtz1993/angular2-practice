@@ -1,0 +1,67 @@
+@import '../../styles/common';
+
+.tb-search-form{
+    display: inline-table;
+    >i{
+        float: left;
+        padding: 9px;
+        color: #aaa;
+    }
+    >.tb-form-group{
+        float:left;
+        margin: 5px 0px;
+        >.tb-form-input{
+            font-size: 14px;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+    }
+}
+
+.tb-element{
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: .65em;
+    padding:  20px;
+    color: $success;
+    transition: all .5s;
+    i.material-icons{
+        vertical-align: middle;             
+    }
+    span{
+        vertical-align: middle;
+        font-weight: 600;
+    }
+    &:last-child{
+        padding-right: 0;
+    }
+
+    &.tb-d-options{
+        position: relative;
+        &:after{
+            content: '';
+            border: 10px solid transparent;
+            border-top: 10px solid $success;
+            position: absolute;
+            margin-left: -5px;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+        &:hover{
+            cursor: pointer;
+            color: #fff !important;
+            background: $success;
+            &:after{
+                opacity: 1;
+            }
+        }
+        
+    }
+}
+
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}

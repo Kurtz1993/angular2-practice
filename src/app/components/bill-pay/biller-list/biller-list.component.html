@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Biller</th>
+            <th>Due Date</th>
+            <th>Account</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngIf="payees">
+        <tr *ngFor="#payee of payees">
+            <td>{{ payee.nickName || payee.displayName }}</td>
+            <td>{{ payee.nextAvailablePaymentDeliveryDate | date:'mediumDate' }}</td>
+            <td>Checking</td>
+            <td>
+                <button (click)="openPaymentForm(payee)" class="btn btn-outline btn-success">PAY NOW</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="add-biller">
+    <a (click)="addNewBiller()">+ ADD A NEW BILLER</a>
+</div>

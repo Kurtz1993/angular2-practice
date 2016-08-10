@@ -1,0 +1,41 @@
+body {
+    background: #e9ebee;
+    margin: 0;
+}
+
+* {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.he1 {
+  height: 150px;
+}
+
+.he2 {
+  height: 300px;
+}
+
+.he3 {
+  height: 450px;
+}
+
+.he4 {
+  height: 600px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 24px
+}
+
+.pull-right{
+    float: right;
+}

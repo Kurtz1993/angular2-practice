@@ -1,0 +1,12 @@
+<div class="menu-item">
+    <div class="menu-item-name" (click)="toggle()">
+        <i class="material-icons">{{icon}}</i>
+        <span class="menu-name">{{name}}</span>
+        <span *ngIf="collapsible" class="pull-right">
+            <i class='material-icons'>{{ collapsed ? 'chevron_left' : 'expand_more' }} </i>
+        </span>
+    </div>
+    <div class="menu-item-content" *ngIf="!collapsed">
+        <ng-content></ng-content> 
+    </div>
+</div>

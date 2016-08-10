@@ -1,0 +1,91 @@
+.chart {
+  display: block; 
+  width: 100%;
+  height: inherit;
+}
+
+.chart:hover{
+  cursor: pointer;
+}
+
+.bofi-card-income-spending .graph-container {
+  position: absolute;
+  padding-left: 20px;
+  width: 75%;
+  height: 160px;
+}
+
+.bofi-card-income-spending .monthly-view-selector {
+  list-style: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.bofi-card-income-spending .monthly-view {
+  display: inline-block;
+  width: 150px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  min-width: 80px;
+  cursor: pointer;
+}
+
+.bofi-card-income-spending .monthly-view:last-child {
+  margin-right: 0;
+}
+
+.bofi-card-income-spending .monthly-view.active {
+  color: #5771AA;
+  border: 2px solid #5771AA;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/******************************/
+.bofi-card-income-spending .transactionDetail {
+  float: right;
+  width: 25%;
+  padding-left: 50px;
+}
+
+.bofi-card-income-spending .transactionDetail p {
+  margin: 0px;
+}
+
+.bofi-card-income-spending .text-primary {
+  color: #5771aa;
+}
+.bofi-card-income-spending .text-secondary {
+  color: #7eb5e2;
+}
+.bofi-card-income-spending .avgDetail {
+  margin-left: 20px;
+  font-size: 24px;
+}
+.bofi-card-income-spending .avgIncome {
+  margin-left: 20px;
+  font-size: 24px;
+}
+.bofi-card-income-spending .avgSpent {
+  margin-left: 20px;
+  font-size: 24px;
+}
+.bofi-card-income-spending .avgIcon {
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+.bofi-card-income-spending .currentMonth {
+  font-size: 1.2em;
+}
+
+.bofi-card-income-spending .currentMonth hr {
+  margin-top: 2px;
+  margin-bottom: 10px;
+  width: 120px;
+  margin-left: 0px!important;
+}

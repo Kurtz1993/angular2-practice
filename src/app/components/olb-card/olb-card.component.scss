@@ -1,0 +1,80 @@
+@import '../../styles/common';
+
+.olb-card {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  height: inherit;
+  min-height: 150px;
+  min-width: 300px;
+  box-sizing: border-box;
+  background-color: white;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 5px $shadow-color;
+  box-shadow: 0px 1px 5px $shadow-color;
+  color: $medium-gray;
+  text-align: left;
+  font-size: 13px;
+
+  >.header {
+    border-radius: 6px 6px 0px 0px;
+    border-top: 0;
+    text-transform: uppercase;
+    padding: 20px 10px;
+    border-bottom: 1px solid $light-gray;
+    height: 2.5%;
+    box-sizing: content-box;
+  }
+
+  .olb-card-title {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .olb-card-content {
+    height: calc(97.5% - 40px);
+    padding: 10px 20px;
+
+    >.olb-card-front {
+      display: block;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    >.olb-card-back {
+      display: none;
+      box-sizing: border-box;
+    }
+  }
+
+  .olb-card-footer {
+    display: none;
+  }
+
+  &.has-footer{
+    >.olb-card-content {
+      height: calc(80.5% - 40px);
+      border-bottom: 1px solid $light-gray;
+    }
+
+    >.olb-card-footer {
+      display: block;
+      box-sizing: border-box;
+      height: 25%;
+      padding: 10px -10px;
+    }
+  }
+}
+
+/* Adjust footer height depending on card height. */
+:host(.he4) > .olb-card.has-footer > .olb-card-footer {
+  height: 17%;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}

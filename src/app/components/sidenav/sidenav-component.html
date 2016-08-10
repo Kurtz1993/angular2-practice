@@ -1,0 +1,52 @@
+<nav class="nav-sidebar" role="navigation">
+    <div class="nav-logo">
+        <img class="logo" src="../../../../public/img/logo-white.png" />
+    </div>
+    <div class="nav-profile">
+        <div class="profile">
+            <img class="nav-img-circle" src="../../../../public/img/a1.jpg" />
+        </div>
+        <div>
+            <span class="text-profile">Hello, Jack</span>
+        </div>
+            <div>
+            <a routerLink="/edit-profile" >
+                <span class="text-profile-job">Edit profile</span>
+            </a>
+        </div>
+    </div>
+    <ul class="nav">
+        <li routerLinkActive="active">
+            <a routerLink="/dashboard" >
+                <menu-item name="Dashboard" href="" icon="dashboard">
+                    <!-- here if the item has nested items -->
+                </menu-item>
+            </a>
+        </li>
+        <li>
+            <menu-item name="Accounts" icon="credit_card" [collapsible]="true" [collapsed]="false">
+                <ul class="nav-second-level">
+                    <li><menu-item name="Account 1" href="/account1"></menu-item></li>
+                    <li><menu-item name="Account 2" href="/account2"></menu-item></li>
+                    <li><menu-item name="Account 3" href="/account3"></menu-item></li>
+                </ul>
+            </menu-item>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/my-bills" >
+                <menu-item name="My Bills" icon="attach_money"></menu-item>
+            </a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/alerts" >
+                <menu-item name="Alerts" icon="warning"></menu-item>
+            </a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/enroll-bill-pay" >
+                <menu-item name="Enroll in Bill Pay" icon="label_outline"></menu-item>
+            </a>
+        </li>
+    </ul>
+</nav>
+   

@@ -1,0 +1,15 @@
+<md-card [style.width.px]="cardWidth"  @cardFlip="state" >
+   
+    <md-card-header [class.back]="!front">
+        <md-card-title>{{title}} </md-card-title>
+        <!--<md-card-subtitle>Header subtitle</md-card-subtitle>-->
+        <a (click)="flip()" >
+            <i class="material-icons i-flip">rotate_left</i>
+        </a>
+    </md-card-header>
+    <md-card-content>
+        <ng-content select="card-front" *ngIf="front"></ng-content>
+        <ng-content select="card-back" *ngIf="!front"></ng-content>        
+    </md-card-content>
+
+</md-card>

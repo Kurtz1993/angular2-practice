@@ -1,0 +1,65 @@
+<olb-card [title]="title" class="col-md-12 he4" [hasFooter]="false">
+    <olb-card-front>
+        <div >
+            <ul class="selector">
+                <li class="item"
+                    [class.active]="activeTab == 'All'"
+                    (click)="filterTab('All', $event)">All Activity</li>
+                <li class="item"
+                    [class.active]="activeTab == 'SchedulePayments'"
+                    (click)="filterTab('SchedulePayments', $event)">Scheduled Payments</li>
+                <li class="item"
+                    [class.active]="activeTab == 'Deposits'"
+                    (click)="filterTab('Deposits', $event)">Deposits</li>
+                <li class="item"
+                    [class.active]="activeTab == 'Withdrawals'"
+                    (click)="filterTab('Withdrawals', $event)">Withdrawals</li>
+            </ul>
+
+
+            <form class="form-search pull-right" (ngSubmit)="search(query)">                
+                <i class="material-icons">search</i>
+                <input [(ngModel)]="query" type="text" class="input-medium search" placeholder="Search Activity">
+                <input style="display:none" type="submit" id="submit"/>
+            </form>
+            <!--TODO: Implement menu from material 2 -->
+            <md-select [label]="'View:'" [options]="viewDaysOptions" [value]="viewDays" (selectChange)="onDaysChange($event)"></md-select>
+        </div>
+        <div class="content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th *ngFor="let header of headers" (click)="sort(header.field)">
+                            {{header.title}} 
+                            <i *ngIf="orderBy === header.field && !reverse" class="material-icons">keyboard_arrow_up</i>
+                            <i *ngIf="orderBy === header.field && reverse" class="material-icons">keyboard_arrow_down</i>
+                        </th>
+                    </tr>
+                </thead> 
+                <tbody *ngIf="!loaded">
+                    <tr class="card-content" *ngIf="!loaded">
+                        <td [attr.rowspan]="headers.length || 1" class="text-center">{{ status }}</td>
+                    </tr>
+                </tbody>               
+                <tbody *ngIf="loaded">
+                    <tr *ngFor="let tran of transactions | search:'description':query;">
+                        <td>{{tran.description}}</td>                        
+                        <td>
+                            <span *ngIf="tran.amount > 0" class="success">+ {{tran.amount | currency:'USD':true:'1.2-2'}}</span>
+                            <span *ngIf="tran.amount < 0" class="error">{{tran.amount | currency:'USD':true:'1.2-2'}}</span>
+                        </td>
+                        <td>{{tran.postDate | date:'M/dd/yy'}}</td>
+                        <td>{{'*' + tran.accountNumber.substring( tran.accountNumber.length - 4, tran.accountNumber.length)}}</td>
+                        <td>
+                            <span *ngIf="tran.isPending">
+                                <i *ngIf="!tran.isDeposit" class="material-icons">call_made</i>
+                                <i *ngIf="!tran.isDeposit" class="material-icons">call_received</i>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+        </div>
+
+    </olb-card-front>
+</olb-card>
